@@ -29,9 +29,9 @@ param(
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
-$PackName = 'doc-runtime'
+$PackName = 'riot-plugin-doc'
 $Platform = 'win-x64'
-$PluginRepoSlug = if ($env:GITHUB_REPOSITORY) { $env:GITHUB_REPOSITORY } else { 'riot-org/plugin-doc-runtime' }
+$PluginRepoSlug = if ($env:GITHUB_REPOSITORY) { $env:GITHUB_REPOSITORY } else { 'riot-org/riot-plugin-doc' }
 
 $Root = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
 $Dist = Join-Path $Root 'dist'

@@ -1,4 +1,4 @@
-// 打包 doc-runtime（macOS）。
+// 打包 riot-plugin-doc（macOS）。
 //
 // 运行时（Python / Node / LibreOffice / artifact-tool）不进 git：体积太大，
 // 而且 @oai/artifact-tool 是 Codex 私有包。本机有 Codex 时用 --seed 抽一次，
@@ -18,12 +18,12 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const PACK_NAME = 'doc-runtime';
+const PACK_NAME = 'riot-plugin-doc';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
 const DIST = path.join(ROOT, 'dist');
 const CACHE = path.join(DIST, '.cache');
-const SLUG = process.env.GITHUB_REPOSITORY || 'riot-org/plugin-doc-runtime';
+const SLUG = process.env.GITHUB_REPOSITORY || 'riot-org/riot-plugin-doc';
 
 const argv = process.argv.slice(2);
 const args = new Set(argv);

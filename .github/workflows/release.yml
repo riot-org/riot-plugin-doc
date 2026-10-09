@@ -4,7 +4,7 @@
 #   macOS:   node scripts/build.mjs --seed --upload
 #   Windows: powershell -File scripts\seed.ps1   （再 gh release upload runtime …）
 #
-# 触发：打 tag v* / doc-runtime-v*，或手动 Run workflow。
+# 触发：打 tag v* / riot-plugin-doc-v*，或手动 Run workflow。
 
 name: release
 
@@ -12,6 +12,7 @@ on:
   push:
     tags:
       - 'v*'
+      - 'riot-plugin-doc-v*'
       - 'doc-runtime-v*'
   workflow_dispatch:
 
@@ -107,7 +108,7 @@ jobs:
         run: |
           v=$(node -p "require('./plugin.json').version")
           echo "version=$v" >> "$GITHUB_OUTPUT"
-          echo "tag=doc-runtime-v$v" >> "$GITHUB_OUTPUT"
+          echo "tag=riot-plugin-doc-v$v" >> "$GITHUB_OUTPUT"
 
       - name: 上传 Release
         env:

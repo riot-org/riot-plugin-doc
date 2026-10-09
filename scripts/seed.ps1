@@ -200,4 +200,4 @@ if ($LASTEXITCODE -ne 0) { Fail 'zstd 失败' }
 Remove-Item -LiteralPath $tar -Force
 Remove-Item -LiteralPath $Stage -Recurse -Force
 Log "  $Out  $([math]::Round((Get-Item $Out).Length/1MB))MB"
-Log "`n传到 Release：gh release upload runtime `"$Out`" --repo riot-org/plugin-doc-runtime --clobber"
+Log "`n传到 Release：gh release upload runtime `"$Out`" --repo riot-org/riot-plugin-doc --clobber"
